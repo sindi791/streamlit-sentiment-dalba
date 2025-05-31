@@ -4,7 +4,12 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
-stop_words = set(stopwords.words('indonesian'))
+stop_words = set([
+    'yang', 'dan', 'di', 'ke', 'dari', 'ini', 'untuk', 'dengan', 'pada', 'karena',
+    'juga', 'akan', 'itu', 'sudah', 'saja', 'lagi', 'kalau', 'bisa', 'kami', 'kita',
+    'mereka', 'ada', 'tidak', 'ya', 'kok', 'gak', 'ga', 'jadi', 'terus', 'dapat', 'lah',
+    'apa', 'kenapa', 'nah', 'oh', 'iya', 'terima', 'kasih', 'thanks', 'thank'
+])
 stemmer = StemmerFactory().create_stemmer()
 
 def preprocess_text(text):
